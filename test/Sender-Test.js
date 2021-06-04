@@ -27,4 +27,12 @@ describe('Sender & Caller', function () {
       expect(await caller.connect(tester).callWhoAmI()).to.equal(caller.address);
     });
   });
+  describe('Tx.origin', function () {
+    it('Who am i: dev', async function () {
+      expect(await caller.callWhoAmIOrigin()).to.equal(dev.address);
+    });
+    it('Who am i: tester', async function () {
+      expect(await caller.connect(tester).callWhoAmIOrigin()).to.equal(tester.address);
+    });
+  });
 });

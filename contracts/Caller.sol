@@ -14,4 +14,8 @@ contract Caller {
     function callWhoAmI() public view returns (address) {
         return _sender.whoAmI();
     }
+
+    function callWhoAmIOrigin() public view returns (address) {
+        return _sender.whoAmIOrigin();
+    }
 }
